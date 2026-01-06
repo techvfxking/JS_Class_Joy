@@ -115,3 +115,87 @@ TypeScript does not stop mutation of objects, only reassignment
 //     }
 // }
 // func();
+
+// 03-01-2026 - Class 2 on TS
+//(functions that return nothing)
+// function logMessage(message: string): void {
+//    console.log(message);
+// }
+// function logMessage(message: string): string {
+//    return message;
+// }
+
+// let value = logMessage("Joy To the World");
+// console.log(value);
+
+// const logMessage = (message: string):string => {
+//    return message;
+// }
+// const logMessage = (message: string):void => {
+//    console.log(message);
+// }
+/**
+ * Meaning:
+   Function never completes normally
+   No return
+   Execution stops
+   Used in:
+   Exhaustive checks
+   Error handling
+   Impossible states
+ */
+
+// let value = logMessage("Joy");
+// console.log(value);
+// let value = ((message: string) => {
+//    return message + "H";
+// })("J");
+// console.log(value);
+
+/**
+ * Operators & Control Flow
+   (JS logic, TS safety)
+ */
+let num1: any = 0;
+let num2: number = 0;
+let num3: any = "";
+
+//Arithmetic & comparison
+num1 = 10; num2 = 20; num3 = "10";
+// console.log(`Addition Result: ${num1+num2}`);
+// console.log(`Subtract Result: ${num1-num2}`);
+
+// num1 = 12; num2 = 12;
+// console.log(`Multiply Result: ${num1*num2}`);
+
+// num1 = 30; num2 = 4;
+// console.log(`Division Result: ${num1/num2}`);
+
+// num1 = 30; num2 = 2;
+// console.log(`Division Result: ${num1/num2}`);
+
+// num1 = 30; num2 = 2;
+// console.log(`Remainder Result: ${num1%num2}`);
+
+// num1 = 30; num2 = 4;
+// console.log(`Remainder Result: ${num1%num2}`);
+/**
+ * Truthy & falsy (JS core idea)
+   Falsy values:
+   false
+   0
+   ""
+   null
+   undefined
+   NaN   
+ */
+// console.log(num1 > num2);
+// console.log(num1 < num2);
+// console.log(num1 == num3); // Checks only the Value
+// console.log(num1 === num3); //Checks value and type both.
+
+/**
+ * Explain:
+   JS converts values to boolean in conditions
+   TS does not change this behavior
+ */
