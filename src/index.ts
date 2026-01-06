@@ -199,6 +199,8 @@ TypeScript does not stop mutation of objects, only reassignment
    JS converts values to boolean in conditions
    TS does not change this behavior
  */
+
+//Class 3 Date 6th Jan 2026
 /**TS/JS Conditions */
 // const checkBiggerNumber = (num1: number | undefined | null, num2: number | undefined | null): number | null => {
 //   if (num1 === undefined || num1 === null || num2 === undefined || num2 === null) {
