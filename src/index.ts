@@ -156,12 +156,12 @@ TypeScript does not stop mutation of objects, only reassignment
  * Operators & Control Flow
    (JS logic, TS safety)
  */
-let num1: any = 0;
-let num2: number = 0;
-let num3: any = "";
+// let num1: any = 0;
+// let num2: number = 0;
+// let num3: any = "";
 
-//Arithmetic & comparison
-num1 = 10; num2 = 20; num3 = "10";
+// //Arithmetic & comparison
+// num1 = 10; num2 = 20; num3 = "10";
 // console.log(`Addition Result: ${num1+num2}`);
 // console.log(`Subtract Result: ${num1-num2}`);
 
@@ -199,3 +199,222 @@ num1 = 10; num2 = 20; num3 = "10";
    JS converts values to boolean in conditions
    TS does not change this behavior
  */
+/**TS/JS Conditions */
+// const checkBiggerNumber = (num1: number | undefined | null, num2: number | undefined | null): number | null => {
+//   if (num1 === undefined || num1 === null || num2 === undefined || num2 === null) {
+//     return null;
+//   }
+
+//   let biggerNumber: number | null = null;
+
+//   if (num1 > num2)
+//     biggerNumber = num1;
+//   else if (num1 < num2)
+//     biggerNumber = num2;
+//   else
+//     biggerNumber = 0;
+
+//   return biggerNumber;
+// }
+
+// FUNCTION: checkBiggerNumber
+// JOB: Find out which number is bigger!
+// INPUT: Two numbers (num1 and num2). They can be real numbers, OR empty (undefined/null)
+// OUTPUT: Returns the bigger number. If numbers are the same, returns 0. If one is empty, returns null (nothing)
+// const checkBiggerNumber = (num1: number | undefined | null, num2: number | undefined | null): number | null => {
+//   // CHECK: Did someone give us empty/nothing as input?
+//   if (num1 === undefined || num1 === null || num2 === undefined || num2 === null) {
+//     // YES! We got nothing. So we return null (nothing) to say "I can't compare empty things"
+//     return null;
+//   }
+
+//   // CREATE: An empty box to put our answer in
+//   let biggerNumber: number | null = null;
+
+//   // COMPARE: The difference between num1 and num2
+//   // Math.sign() tells us:
+//   // - 1 means num1 is bigger (positive difference)
+//   // - -1 means num2 is bigger (negative difference)
+//   // - 0 means they are the SAME (zero difference)
+//   switch (Math.sign(num1 - num2)) {
+//     // CASE 1: num1 is bigger
+//     case 1:
+//       biggerNumber = num1;  // Put num1 in our answer box
+//       break;  // Stop checking, we found the answer!
+//     // CASE 2: num2 is bigger
+//     case -1:
+//       biggerNumber = num2;  // Put num2 in our answer box
+//       break;  // Stop checking, we found the answer!
+//     // CASE 3: They are the same
+//     case 0:
+//       biggerNumber = 0;  // Put 0 in our answer box to show "they're the same"
+//       break;  // Stop checking, we found the answer!
+//     default:
+//       biggerNumber = null;
+//       break;
+//   }
+
+//   // RETURN: Give back our answer
+//   return biggerNumber;
+// }
+
+// const checkBiggerNumber = (num1: number | undefined | null, num2: number | undefined | null): number | null => {
+//   if (num1 === undefined || num1 === null || num2 === undefined || num2 === null) {
+//     return null;
+//   }
+
+//   return num1 > num2 ? num1 : num1 < num2 ? num2 : 0;
+// }
+
+
+// FUNCTION: printf
+// JOB: Print something on the screen (like talking!)
+// INPUT: Any data (data) - whatever you want to show
+// OUTPUT: Nothing (void) - we just show it, don't give anything back
+// const printf = (data: any): void => {
+//   // COMMAND: Print the data to the screen using console.log
+//   console.log(data);
+// }
+
+// const main = (): void => {
+
+//   let num1: number = 11;
+//   let num2: number = 11;
+
+//   let result: number | null = checkBiggerNumber(num1, num2);
+
+//   if (result === null)
+//     printf(`Please enter valid number for check`);
+//   else if (result === 0)
+//     printf(`Both Number 1: ${num1} and Number 2: ${num2} is same`);
+//   else
+//     printf(`Biggest number is: ${result}`);
+
+// }
+
+
+// FUNCTION: main
+// JOB: This is the boss function! It runs the whole program!
+// INPUT: Nothing
+// OUTPUT: Nothing (void) - we just do things, don't give anything back
+// const main = (): void => {
+
+//   // CREATE: First number and put 11 in it (like a box with number 11)
+//   let num1: number = 11;
+
+//   // CREATE: Second number and put 11 in it (like another box with number 11)
+//   let num2: number = 11;
+
+//   // CALL: Ask checkBiggerNumber to find which number is bigger
+//   // STORE: Put the answer in a box called result
+//   let result: number | null = checkBiggerNumber(num1, num2);
+
+//   // CHECK: What answer did we get? Let's look at each possibility:
+//   switch (result) {
+//     // CASE 1: We got null (nothing) - means we had empty numbers
+//     case null:
+//       // ACTION: Print this message to tell the person "something went wrong"
+//       printf(`Please enter valid number for check`);
+//       break;  // Stop checking other cases
+
+//     // CASE 2: We got 0 - means both numbers are the same
+//     case 0:
+//       // ACTION: Print this message to say "both numbers are the same"
+//       printf(`Both Number 1: ${num1} and Number 2: ${num2} is same`);
+//       break;  // Stop checking other cases
+
+//     // CASE 3: We got any other number (1-999 or any real number)
+//     default:
+//       // ACTION: Print the biggest number we found
+//       printf(`Biggest number is: ${result}`);
+//       break;  // Stop checking
+//   }
+
+// }
+
+// const main = (): void => {
+
+//   let num1: number = 11;
+//   let num2: number = 11;
+
+//   let result: number | null = checkBiggerNumber(num1, num2);
+
+//   result === null ? printf(`Please enter valid number for check`) : result === 0 ? printf(`Both Number 1: ${num1} and Number 2: ${num2} is same`) : printf(`Biggest number is: ${result}`);
+
+// }
+
+// RUN IT: Call the main function to start the program!
+//main();
+
+//------------------------///////////--------------------------//
+/*
+  number, string, boolean, symbol, bigint, function
+
+  let num1: joy = 18
+ */
+// number = joy; ❌
+// let num1: joy = 18; ❌
+
+// type TJoy = number | undefined | null; //✅
+
+// let num1: joy = null; //✅
+
+// type TSpecial = "Yes" | "No";
+// const test = (value: special) => {
+//   if(value === "Yes")
+//     return true;
+//   else
+//     return false;
+// }
+
+// console.log(test('Yes'));
+
+// This is a list of different fruits we know about
+type TFruit = "Apple" | "Banana" | "Grape" | "Wax Apple" | "Unknown";
+
+// This is a list of different colors
+type TColor = "Red" | "Yellow" | "Green" | "White" | "Error";
+
+// This is like a magic box that tells us what color a fruit is!
+// We put a fruit name in, and it tells us the color
+const returnFruitColor = (fruit: TFruit): TColor => {
+  
+  // First, we start by saying we don't know the color yet
+  // So we set it to "Error" (like when we don't know the answer)
+  let color: TColor = "Error";
+  
+  // Now we check which fruit it is, one by one
+  switch (fruit) {
+    
+    // If it's an Apple...
+    case 'Apple':
+      color = "Red";  // ...then the color is Red!
+      break;  // Stop checking, we found it!
+    
+    // If it's a Banana...
+    case "Banana":
+      color = "Yellow";  // ...then the color is Yellow!
+      break;  // Stop checking!
+    
+    // If it's a Grape...
+    case "Grape":
+      color = "Green";  // ...then the color is Green!
+      break;  // Stop checking!
+    
+    // If it's a Wax Apple...
+    case "Wax Apple":
+      color = "White";  // ...then the color is White!
+      break;  // Stop checking!
+    
+    // If it's none of these fruits...
+    default:
+      color = "Error";  // ...we say "Error" because we don't know!
+      break;
+  }
+  
+  // Finally, tell everyone what color we found!
+  return color;
+}
+
+
+console.log(returnFruitColor('Unknown'));
